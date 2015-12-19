@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace SOLIDPrinciplesSuccinctly
+namespace LSP_Violation
 {
     class Program
     {
@@ -15,14 +14,31 @@ namespace SOLIDPrinciplesSuccinctly
 
         private static IEnumerable<IValidator> LoadAllValidationRules()
         {
-            var validators = new List<IValidator> { new TypeValidator(), new IPValidator(), new DateValidator() };
+            var validators = new List<IValidator> {
+                                                    new TypeValidator(),
+                                                    new IPValidator(),
+                                                    new DateValidator(),
+                                                    new DynamicValidator()
+                                                   };
             validators.ForEach(v => v.Load());
             return validators;
         }
 
         private static bool IsValidationRulePassed(IEnumerable<IValidator> validators)
         {
-            return validators.Where(v => v.IsValid()).Count() == validators.Count();
+            bool isValid = false;
+            foreach (var v in validators)
+            {
+                if (v is DynamicValidator)
+                    continue;
+
+                isValid = v.IsValid();
+
+                if (!isValid)
+                    return false;
+
+            }
+            return false; ;
         }
     }
 }

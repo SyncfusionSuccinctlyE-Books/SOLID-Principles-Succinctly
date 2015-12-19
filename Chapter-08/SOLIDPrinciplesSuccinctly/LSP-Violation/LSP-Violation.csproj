@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateValidator.cs" />
+    <Compile Include="DynamicValidator.cs" />
     <Compile Include="IPValidator.cs" />
     <Compile Include="IValidator.cs" />
     <Compile Include="Program.cs" />

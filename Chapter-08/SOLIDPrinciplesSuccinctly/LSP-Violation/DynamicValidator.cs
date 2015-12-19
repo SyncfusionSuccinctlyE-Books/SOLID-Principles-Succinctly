@@ -2,7 +2,7 @@
 
 namespace LSP_Violation
 {
-    public class IPValidator : IValidator
+    public class DynamicValidator : IValidator
     {
         public bool IsValid()
         {

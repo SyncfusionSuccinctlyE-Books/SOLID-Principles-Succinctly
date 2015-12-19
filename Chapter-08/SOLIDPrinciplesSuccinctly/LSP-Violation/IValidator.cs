@@ -1,4 +1,4 @@
-﻿namespace SOLIDPrinciplesSuccinctly
+﻿namespace LSP_Violation
 {
     public interface IValidator
     {

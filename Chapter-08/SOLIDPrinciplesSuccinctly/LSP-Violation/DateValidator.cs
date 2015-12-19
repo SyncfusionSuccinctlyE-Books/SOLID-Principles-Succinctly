@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SOLIDPrinciplesSuccinctly
+namespace LSP_Violation
 {
     public class DateValidator : IValidator
     {
