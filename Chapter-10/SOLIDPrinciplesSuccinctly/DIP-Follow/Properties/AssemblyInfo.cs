@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SOLIDPrinciplesSuccinctly")]
+[assembly: AssemblyTitle("DIP-Follow")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SOLIDPrinciplesSuccinctly")]
+[assembly: AssemblyProduct("DIP-Follow")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("27a791be-abe1-4262-a74b-f9e9a2025b6a")]
+[assembly: Guid("14a0f7c5-4576-461f-b2f2-d4d6b56aada3")]
 
 // Version information for an assembly consists of the following four values:
 //
