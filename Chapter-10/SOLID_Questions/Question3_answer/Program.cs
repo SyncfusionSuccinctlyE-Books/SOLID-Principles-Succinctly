@@ -7,66 +7,16 @@ namespace Question3_answer
     {
         static void Main(string[] args)
         {
-            //CientA
-            IClient clientA = new ClientA();
-            var subscriptionsForA = clientA.Subscriptions();
-            Console.WriteLine("ClientA subscribed for {0} providers.",subscriptionsForA.Item1);
-            var notifyToClientA = new Notification(subscriptionsForA.Item2);
-            notifyToClientA.SendAll();
+            var notification = new Notification(new List<IProcess>
+            {
+                new CloudNotifier(),
+                new OnPremiseProvider(),
+                new GalaxyNotifier()
+            });
 
-            //ClientB
-            IClient clientB = new ClientB();
-            var subscriptionsForB = clientB.Subscriptions();
-            Console.WriteLine("ClientB subscribed for {0} providers.", subscriptionsForB.Item1);
-            var notifyToClientB = new Notification(subscriptionsForB.Item2);
-            notifyToClientB.SendAll();
-
-            //ClientC
-            IClient clientC = new ClientC();
-            var subscriptionsForC = clientC.Subscriptions();
-            Console.WriteLine("ClientC subscribed for {0} providers.", subscriptionsForC.Item1);
-            var notifyToClientC = new Notification(subscriptionsForC.Item2);
-            notifyToClientC.SendAll();
+            notification.SendAll();
 
             Console.ReadLine();
-        }
-    }
-
-    public interface IClient
-    {
-        //Used tuple just to keep it simple
-        //You can use, whatever you want (key,value) etc.
-        Tuple<int, IEnumerable<IProcess>> Subscriptions();
-    }
-
-    public class ClientA : IClient
-    {
-        public Tuple<int, IEnumerable<IProcess>> Subscriptions()
-        {
-            //Get list of subscribed providers or notifier whatever you called it
-            //Best bet to get this list is database
-            //ClientA - subscribed for only one provider
-            return new Tuple<int, IEnumerable<IProcess>>(1, new List<IProcess> {new OnPremiseProvider()});
-        }
-    }
-
-    public class ClientB : IClient
-    {
-        public Tuple<int, IEnumerable<IProcess>> Subscriptions()
-        {
-            //ClientB - subscribed for two providers
-            return new Tuple<int, IEnumerable<IProcess>>(2,
-                new List<IProcess> {new OnPremiseProvider(), new CloudNotifier()});
-        }
-    }
-
-    public class ClientC : IClient
-    {
-        public Tuple<int, IEnumerable<IProcess>> Subscriptions()
-        {
-            //ClientB - subscribed for three providers
-            return new Tuple<int, IEnumerable<IProcess>>(3,
-                new List<IProcess> {new OnPremiseProvider(), new CloudNotifier(), new GalaxyNotifier()});
         }
     }
 
