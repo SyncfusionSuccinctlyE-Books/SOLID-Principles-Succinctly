@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Question5_answer
+namespace Question3_answer
 {
     class Program
     {
