@@ -4,40 +4,49 @@ using System.Linq;
 
 namespace LSP_Follow
 {
-    class Program
+    //Code updated as requested by Gkavranis George
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var validators = LoadAllValidationRules();
-
             Console.WriteLine("Total validation rules {0} are loaded.", validators.Count());
 
+            var validationChecks = new List<IValidatorCheck>
+            {
+                new TypeValidator(),
+                new IPValidator(),
+                new DateValidator(),
+                //new DynamicValidator()
+            };
+            Console.WriteLine("Validation Checks are {0}",
+                IsValidationRulePassed(validationChecks) ? "passing" : "failing");
         }
+
 
         private static IEnumerable<IValidatorLoader> LoadAllValidationRules()
         {
-            var validators = new List<IValidatorLoader> {
-                                                    new TypeValidator(),
-                                                    new IPValidator(),
-                                                    new DateValidator(),
-                                                    new DynamicValidator()
-                                                   };
+            var validators = new List<IValidatorLoader>
+            {
+                new TypeValidator(),
+                new IPValidator(),
+                new DateValidator(),
+                //new DynamicValidator()
+            };
             validators.ForEach(v => v.Load());
             return validators;
         }
 
-        private static bool IsValidationRulePassed(IEnumerable<IValidatorCheck> validators)
+
+        //Use this where we need certain checks for Validators
+        private static bool IsValidationRulePassed(IEnumerable<IValidatorCheck> validatorChecks)
         {
-            bool isValid = false;
-            foreach (var v in validators)
+            foreach (var v in validatorChecks)
             {
-                isValid = v.IsValid();
-
-                if (!isValid)
-                    return false;
-
+                if (!v.IsValid()) return false;
             }
-            return false; ;
+            return true;
+            
         }
     }
 }
