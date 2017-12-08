@@ -1,7 +1,9 @@
-#SOLID Succinctly
-SOLID principles are great start to write your code beautiful and robust. Use SOLID Principles to throw-out your habit to write ```STUPID/DIRTY``` code.
+# SOLID Principles Succinctly
 
-##Code-Examples
-Here, you can find and play with code examples mentioned in the book ```SOLID Succinctly``` by ```Gaurav Kumar Arora```.
+This is the companion repo for [*SOLID Principles Succinctly*](https://www.syncfusion.com/resources/techportal/details/ebooks/solidprinciplessuccinctly) by Zoran Maksimovic. Published by Syncfusion.
 
+[![cover](https://github.com/SyncfusionSuccinctlyE-Books/SOLID-Principles-Succinctly/blob/master/cover.png)](https://www.syncfusion.com/resources/techportal/details/ebooks/solidprinciplessuccinctly)
 
+## Looking for more _Succinctly_ titles?
+
+Check out the entire library of more than 130 _Succinctly_ e-books at [https://www.syncfusion.com/resources/techportal/ebooks](https://www.syncfusion.com/resources/techportal/ebooks).
