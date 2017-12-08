@@ -1,6 +1,6 @@
 # SOLID Principles Succinctly
 
-This is the companion repo for [*SOLID Principles Succinctly*](https://www.syncfusion.com/resources/techportal/details/ebooks/solidprinciplessuccinctly) by Zoran Maksimovic. Published by Syncfusion.
+This is the companion repo for [*SOLID Principles Succinctly*](https://www.syncfusion.com/resources/techportal/details/ebooks/solidprinciplessuccinctly) by Gaurav Kumar Arora. Published by Syncfusion.
 
 [![cover](https://github.com/SyncfusionSuccinctlyE-Books/SOLID-Principles-Succinctly/blob/master/cover.png)](https://www.syncfusion.com/resources/techportal/details/ebooks/solidprinciplessuccinctly)
 
